@@ -7,5 +7,8 @@
             <menu:item id="i_project_new" messageCode="global_menu_new" url="/projects?form" z="1BazRC1rLnod0a+MpP1flWTvehA="/>
             <menu:item id="i_project_list" messageCode="global_menu_list" url="/projects?page=1&amp;size=${empty param.size ? 10 : param.size}" z="GHL05c3Rvr+eKDgRCk3Ttak0W+g="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__api_v1index_id" messageCode="global_generic" url="/api/v1/index" z="aoDP517DX5EEQQTf95lh18G1IWw="/>
+        </menu:category>
     </menu:menu>
 </div>

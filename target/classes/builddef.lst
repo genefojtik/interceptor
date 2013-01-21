@@ -20,6 +20,7 @@ UTF-8
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/web/ApplicationConversionServiceFactoryBean.java
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/web/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/domain/Project_Roo_Configurable.aj
+/userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/controller/RedirectController.java
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/domain/Project.java
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/domain/Project_Roo_JavaBean.aj
 /userData/apps/workspace/interceptor/src/main/java/com/test/interceptor/controller/ProjectController.java

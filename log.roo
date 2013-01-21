@@ -14,3 +14,8 @@ web mvc all --package ~.web
 web mvc all --package ~.web
 web mvc json all
 web mvc all --package ~.web
+// [failed] controller class --class ~.controller.RedirectController --preferredMapping /api/v1
+// [failed] web mvc controller --class ~.controller.RedirectController --preferredMapping /api/v1
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-01-20 20:09:58
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-01-20 20:11:24
+web mvc controller --class ~.controller.RedirectController --preferredMapping /api/v1/
