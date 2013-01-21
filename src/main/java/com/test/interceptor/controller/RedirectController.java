@@ -25,22 +25,29 @@ public class RedirectController {
 	// Show ProjectsByProjectID
 	// ../projects/{project}
 	@RequestMapping(value="projects/{project}", method=RequestMethod.GET)
-	public String showProjectsByProjectId(@PathVariable("project") String project) {
+	public String redirect_showProjectsByProjectId(@PathVariable("project") String project) {
 		return "redirect:/projects/{project}";
 	}
 	
 	// Show Projects
 	// ../projects
 	@RequestMapping(value="projects", method=RequestMethod.GET)
-	public String showProjects() {
+	public String redirect_showProjects() {
 		return "redirect:/projects/";
 	}
 	
 	// Show Stories By ProjectID
-	// ../projects/{project}/stories
+	// ../projects/{projectId}/stories
 	@RequestMapping(value="projects/{project}/storys", method=RequestMethod.GET)
-	public String showStoriesByProjectId(@PathVariable("project") String project) {
+	public String redirect_showStoriesByProjectId(@PathVariable("project") String project) {
 		return "redirect:/storys/ByProject/{project}";
 	}
-
+	
+	// Show Stories By StoryId
+	// ../projects/{projectId}/stories/{storyId}
+	@RequestMapping(value="projects/{projectId}/storys/{storyId}", method=RequestMethod.GET)
+	public String redirect_showStory(@PathVariable("storyId") String storyId) {
+		return "redirect:/storys/{storyId}";
+	}
+	
 }

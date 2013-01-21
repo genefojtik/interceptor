@@ -18,4 +18,14 @@ privileged aspect Story_Roo_Finder {
         return q;
     }
     
+    public static TypedQuery<Story> Story.findStorysByProjectAndNameEquals(Project project, String name) {
+        if (project == null) throw new IllegalArgumentException("The project argument is required");
+        if (name == null || name.length() == 0) throw new IllegalArgumentException("The name argument is required");
+        EntityManager em = Story.entityManager();
+        TypedQuery<Story> q = em.createQuery("SELECT o FROM Story AS o WHERE o.project = :project AND o.name = :name", Story.class);
+        q.setParameter("project", project);
+        q.setParameter("name", name);
+        return q;
+    }
+    
 }

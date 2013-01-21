@@ -3,6 +3,7 @@
 
 package com.test.interceptor.web;
 
+import com.test.interceptor.domain.Project;
 import com.test.interceptor.domain.Story;
 import com.test.interceptor.web.StoryController;
 import java.util.List;
@@ -13,21 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect StoryController_Roo_Controller_Json {
-    
-    @RequestMapping(value = "/{id}", headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> StoryController.showJson(@PathVariable("id") Long id) {
-        Story story = Story.findStory(id);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        if (story == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<String>(story.toJson(), headers, HttpStatus.OK);
-    }
     
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
@@ -90,6 +80,14 @@ privileged aspect StoryController_Roo_Controller_Json {
         }
         story.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByProjectAndNameEquals", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> StoryController.jsonFindStorysByProjectAndNameEquals(@RequestParam("project") Project project, @RequestParam("name") String name) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Story.toJsonArray(Story.findStorysByProjectAndNameEquals(project, name).getResultList()), headers, HttpStatus.OK);
     }
     
 }

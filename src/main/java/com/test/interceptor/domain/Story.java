@@ -11,7 +11,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJson
-@RooJpaActiveRecord(finders = { "findStorysByProject" })
+@RooJpaActiveRecord(finders = { "findStorysByProject", "findStorysByProjectAndNameEquals" })
 public class Story {
 
     @NotNull

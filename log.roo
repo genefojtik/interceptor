@@ -35,3 +35,4 @@ web mvc all --package ~.web
 finder list --class ~.domain.Story --depth 2
 finder add --finderName findStorysByProject
 finder add --finderName findStorysByProject
+finder add findStorysByProjectAndNameEquals

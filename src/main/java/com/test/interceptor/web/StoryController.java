@@ -19,14 +19,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RooWebJson(jsonObject = Story.class)
 public class StoryController {
 
-	@RequestMapping(value = "/ByProject/{project}", headers = "Accept=application/json")
+	@RequestMapping(value = "/ByProject/{projectId}", headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> jsonFindStorysByProject(@PathVariable("project") Long id) {
+    public ResponseEntity<String> jsonFindStorysByProject(@PathVariable("projectId") Long id) {
 		Project project = Project.findProject(id);
 		HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         return new ResponseEntity<String>(Story.toJsonArray(Story.findStorysByProject(project).getResultList()), headers, HttpStatus.OK);
     }
 	
-	//@RequestParam("project") Long id
+	@RequestMapping(value = "/{storyId}", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> showJson(@PathVariable("storyId") Long id) {
+        Story story = Story.findStory(id);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        if (story == null) {
+            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<String>(story.toJson(), headers, HttpStatus.OK);
+    }
 }
