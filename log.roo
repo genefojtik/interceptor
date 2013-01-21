@@ -1,0 +1,16 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-01-20 16:52:52
+project --topLevelPackage com.test.interceptor --projectName interceptor --java 6 --packaging JAR
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-01-20 16:53:00
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-01-20 16:56:04
+jpa setup --provider HIBERNATE --database MYSQL --hostName localhost --userName root --password atomic --databaseName adaptiveaction
+
+entity jpa --class ~.domain.Project --testAutomatically true
+field string --fieldName name --notNull true
+json add 
+web mvc setup
+web mvc json all --
+web mvc json all
+web mvc all --package ~.web
+web mvc all --package ~.web
+web mvc json all
+web mvc all --package ~.web

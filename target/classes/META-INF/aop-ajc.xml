@@ -1,0 +1,14 @@
+<aspectj>
+<aspects>
+<aspect name="com.test.interceptor.controller.ProjectController_Roo_Controller_Json"/>
+<aspect name="com.test.interceptor.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_Jpa_Entity"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_Json"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_Configurable"/>
+<aspect name="com.test.interceptor.controller.ProjectController_Roo_Controller"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_ToString"/>
+<aspect name="com.test.interceptor.domain.Project_Roo_JavaBean"/>
+</aspects>
+</aspectj>
+
