@@ -4,6 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_test_interceptor_domain_Project" modelAttribute="project" path="/projects" render="${empty dependencies}" z="om5GkwbvE6NdLXG8SvnTCZVb988=">
         <field:input field="name" id="c_com_test_interceptor_domain_Project_name" required="true" z="HGDHxuvXbmQbceKFYLYpgk8e/wA="/>
+        <field:simple field="stories" id="c_com_test_interceptor_domain_Project_stories" messageCode="entity_reference_not_managed" messageCodeAttribute="Story" z="y0NXQam5GkXqblif+uHDCCL7U0c="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_test_interceptor_domain_Project" render="${not empty dependencies}" z="dWoM3xHGZg/uO/uYFViDwvtwK38="/>
 </div>

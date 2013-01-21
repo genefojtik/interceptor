@@ -5,6 +5,7 @@ package com.test.interceptor.controller;
 
 import com.test.interceptor.controller.ProjectController;
 import com.test.interceptor.domain.Project;
+import com.test.interceptor.domain.Story;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -86,6 +87,7 @@ privileged aspect ProjectController_Roo_Controller {
     
     void ProjectController.populateEditForm(Model uiModel, Project project) {
         uiModel.addAttribute("project", project);
+        uiModel.addAttribute("storys", Story.findAllStorys());
     }
     
     String ProjectController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

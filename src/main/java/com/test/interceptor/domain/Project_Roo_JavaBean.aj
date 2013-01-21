@@ -4,6 +4,8 @@
 package com.test.interceptor.domain;
 
 import com.test.interceptor.domain.Project;
+import com.test.interceptor.domain.Story;
+import java.util.Set;
 
 privileged aspect Project_Roo_JavaBean {
     
@@ -13,6 +15,14 @@ privileged aspect Project_Roo_JavaBean {
     
     public void Project.setName(String name) {
         this.name = name;
+    }
+    
+    public Set<Story> Project.getStories() {
+        return this.stories;
+    }
+    
+    public void Project.setStories(Set<Story> stories) {
+        this.stories = stories;
     }
     
 }

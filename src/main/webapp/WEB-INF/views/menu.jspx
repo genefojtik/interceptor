@@ -10,5 +10,9 @@
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__api_v1index_id" messageCode="global_generic" url="/api/v1/index" z="aoDP517DX5EEQQTf95lh18G1IWw="/>
         </menu:category>
+        <menu:category id="c_story" z="1UGvbJGUiz986fvGzB5Z2nupICg=">
+            <menu:item id="i_story_new" messageCode="global_menu_new" url="/storys?form" z="qkvMDXib3Vrs2SJbRPfNT12KCtA="/>
+            <menu:item id="i_story_list" messageCode="global_menu_list" url="/storys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="b6IFNH3yY7mLSAuQzAkXIztQVVs="/>
+        </menu:category>
     </menu:menu>
 </div>

@@ -4,6 +4,7 @@
 package com.test.interceptor.web;
 
 import com.test.interceptor.domain.Project;
+import com.test.interceptor.domain.Story;
 import com.test.interceptor.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -37,10 +38,37 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Story, String> ApplicationConversionServiceFactoryBean.getStoryToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.test.interceptor.domain.Story, java.lang.String>() {
+            public String convert(Story story) {
+                return new StringBuilder().append(story.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Story> ApplicationConversionServiceFactoryBean.getIdToStoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.test.interceptor.domain.Story>() {
+            public com.test.interceptor.domain.Story convert(java.lang.Long id) {
+                return Story.findStory(id);
+            }
+        };
+    }
+    
+    public Converter<String, Story> ApplicationConversionServiceFactoryBean.getStringToStoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.test.interceptor.domain.Story>() {
+            public com.test.interceptor.domain.Story convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Story.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getProjectToStringConverter());
         registry.addConverter(getIdToProjectConverter());
         registry.addConverter(getStringToProjectConverter());
+        registry.addConverter(getStoryToStringConverter());
+        registry.addConverter(getIdToStoryConverter());
+        registry.addConverter(getStringToStoryConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

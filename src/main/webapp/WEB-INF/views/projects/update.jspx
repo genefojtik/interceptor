@@ -4,5 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_test_interceptor_domain_Project" modelAttribute="project" path="/projects" versionField="Version" z="YE4oG6SQ/ZxdpqXJJzz9XC6pEgQ=">
         <field:input field="name" id="c_com_test_interceptor_domain_Project_name" required="true" z="HGDHxuvXbmQbceKFYLYpgk8e/wA="/>
+        <field:simple field="stories" id="c_com_test_interceptor_domain_Project_stories" messageCode="entity_reference_not_managed" messageCodeAttribute="Story" z="y0NXQam5GkXqblif+uHDCCL7U0c="/>
     </form:update>
 </div>

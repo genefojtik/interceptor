@@ -19,3 +19,19 @@ web mvc all --package ~.web
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-01-20 20:09:58
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-01-20 20:11:24
 web mvc controller --class ~.controller.RedirectController --preferredMapping /api/v1/
+entity jpa --class ~.domain.Story --testAutomatically true
+field string --fieldName name --notNull true --sizeMin 2 --sizeMax 30
+field reference --fieldName project --type ~.domain.Project --cardinality MANY_TO_ONE
+focus --class ~.domain.Project
+field set --fieldName stories --type ~.domain.Story --cardinality ONE_TO_MANY
+web mvc all --package ~.web
+web mvc all --package ~.controller
+json all 
+web mvc all --package ~.controller
+web mvc all --package ~.controller
+web mvc json all 
+web mvc json all --package ~.controller
+web mvc all --package ~.web
+finder list --class ~.domain.Story --depth 2
+finder add --finderName findStorysByProject
+finder add --finderName findStorysByProject

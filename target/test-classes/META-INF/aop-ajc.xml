@@ -1,5 +1,9 @@
 <aspectj>
 <aspects>
+<aspect name="com.test.interceptor.domain.StoryIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.test.interceptor.domain.StoryIntegrationTest_Roo_Configurable"/>
+<aspect name="com.test.interceptor.domain.StoryDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.test.interceptor.domain.StoryDataOnDemand_Roo_Configurable"/>
 <aspect name="com.test.interceptor.domain.ProjectDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.test.interceptor.domain.ProjectIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.test.interceptor.domain.ProjectIntegrationTest_Roo_Configurable"/>
